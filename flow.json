@@ -1,1 +1,63 @@
-[]
+[
+    {
+        "id": "45a71fc.1bebde",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "2ac34a26.7bd096",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "df326a5c.9a8758",
+        "type": "mqtt in",
+        "z": "45a71fc.1bebde",
+        "name": "",
+        "topic": "#",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "2ac34a26.7bd096",
+        "x": 140,
+        "y": 100,
+        "wires": [
+            [
+                "bd4cf071.e7dfc"
+            ]
+        ]
+    },
+    {
+        "id": "bd4cf071.e7dfc",
+        "type": "debug",
+        "z": "45a71fc.1bebde",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 510,
+        "y": 100,
+        "wires": []
+    }
+]
