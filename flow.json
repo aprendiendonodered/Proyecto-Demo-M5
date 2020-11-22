@@ -40,7 +40,7 @@
         "type": "ui_group",
         "name": "Estado Botones M5Stack",
         "tab": "5f436a55.6632f4",
-        "order": 1,
+        "order": 4,
         "disp": true,
         "width": "6",
         "collapse": false
@@ -142,11 +142,40 @@
         }
     },
     {
-        "id": "2b51ce0a.f32b32",
+        "id": "82b66628.be2f58",
         "type": "ui_group",
-        "name": "Manda mensaje",
+        "name": "M5StickC",
+        "tab": "5f436a55.6632f4",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "57fe6446.88d14c",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "4edafae7.7fb414",
+        "order": 4,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "ce617b4a.db5e68",
+        "type": "ui_group",
+        "name": "M5StickC",
         "tab": "5f436a55.6632f4",
         "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "74f689f3.93cd48",
+        "type": "ui_group",
+        "name": "M5StickC",
+        "tab": "5f436a55.6632f4",
+        "order": 3,
         "disp": true,
         "width": "6",
         "collapse": false
@@ -211,8 +240,8 @@
         "qos": "",
         "retain": "",
         "broker": "2ac34a26.7bd096",
-        "x": 720,
-        "y": 180,
+        "x": 700,
+        "y": 480,
         "wires": []
     },
     {
@@ -284,7 +313,7 @@
         "op2": " ",
         "op1type": "pay",
         "op2type": "str",
-        "duration": "1",
+        "duration": "3",
         "extend": false,
         "overrideDelay": false,
         "units": "s",
@@ -325,7 +354,7 @@
         "op2": " ",
         "op1type": "pay",
         "op2type": "str",
-        "duration": "1",
+        "duration": "3",
         "extend": false,
         "overrideDelay": false,
         "units": "s",
@@ -366,7 +395,7 @@
         "op2": " ",
         "op1type": "pay",
         "op2type": "str",
-        "duration": "1",
+        "duration": "3",
         "extend": false,
         "overrideDelay": false,
         "units": "s",
@@ -421,8 +450,8 @@
         "tls": true,
         "name": "aprendiendoraspberrypi@gmail.com",
         "dname": "manda email alerta",
-        "x": 410,
-        "y": 580,
+        "x": 350,
+        "y": 840,
         "wires": []
     },
     {
@@ -431,8 +460,8 @@
         "z": "45a71fc.1bebde",
         "name": "En el inicio de Node-RED mando un email",
         "info": "",
-        "x": 270,
-        "y": 520,
+        "x": 210,
+        "y": 780,
         "wires": []
     },
     {
@@ -456,8 +485,8 @@
         "topic": "Node-RED enriquecrespo.com:1880 deployed",
         "payload": "La Instancia de Node-RED enriquecrespo.com:1880 ha hecho un redeploy o se ha reiniciado.",
         "payloadType": "str",
-        "x": 210,
-        "y": 580,
+        "x": 150,
+        "y": 840,
         "wires": [
             [
                 "67252650.d05f28"
@@ -485,8 +514,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 210,
-        "y": 640,
+        "x": 150,
+        "y": 900,
         "wires": [
             [
                 "30c6e645.d7462a",
@@ -513,8 +542,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 410,
-        "y": 640,
+        "x": 350,
+        "y": 900,
         "wires": [
             []
         ]
@@ -538,8 +567,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 410,
-        "y": 680,
+        "x": 350,
+        "y": 940,
         "wires": [
             []
         ]
@@ -551,20 +580,330 @@
         "name": "",
         "label": "",
         "tooltip": "",
-        "group": "2b51ce0a.f32b32",
-        "order": 3,
+        "group": "4edafae7.7fb414",
+        "order": 6,
         "width": 0,
         "height": 0,
         "passthru": true,
         "mode": "text",
         "delay": 300,
         "topic": "",
-        "x": 470,
-        "y": 180,
+        "x": 100,
+        "y": 480,
         "wires": [
             [
                 "ff02db8e.de4918"
             ]
+        ]
+    },
+    {
+        "id": "c6d87920.1c6f38",
+        "type": "comment",
+        "z": "45a71fc.1bebde",
+        "name": "Lógica de M5StickC",
+        "info": "",
+        "x": 150,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "a735d209.9e61f",
+        "type": "mqtt in",
+        "z": "45a71fc.1bebde",
+        "name": "",
+        "topic": "aprendiendonodered/casa/m5stick/temperatura",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "2ac34a26.7bd096",
+        "x": 240,
+        "y": 600,
+        "wires": [
+            [
+                "f18da1b1.316fd",
+                "63bbf25b.f79ecc",
+                "c689d5b4.4fd018"
+            ]
+        ]
+    },
+    {
+        "id": "f0a76319.96b3f",
+        "type": "mqtt in",
+        "z": "45a71fc.1bebde",
+        "name": "",
+        "topic": "aprendiendonodered/casa/m5stick/humedad",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "2ac34a26.7bd096",
+        "x": 230,
+        "y": 660,
+        "wires": [
+            [
+                "95263cc1.d61d1",
+                "bf6f4252.8bf9c"
+            ]
+        ]
+    },
+    {
+        "id": "8639a9a3.d02cd8",
+        "type": "mqtt in",
+        "z": "45a71fc.1bebde",
+        "name": "",
+        "topic": "aprendiendonodered/casa/m5stick/presion",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "2ac34a26.7bd096",
+        "x": 220,
+        "y": 720,
+        "wires": [
+            [
+                "bbe737be.dd4a38",
+                "b8b0bcc9.10144"
+            ]
+        ]
+    },
+    {
+        "id": "f18da1b1.316fd",
+        "type": "ui_gauge",
+        "z": "45a71fc.1bebde",
+        "name": "",
+        "group": "82b66628.be2f58",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperatura",
+        "label": "C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "24",
+        "seg2": "26",
+        "x": 660,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "95263cc1.d61d1",
+        "type": "ui_gauge",
+        "z": "45a71fc.1bebde",
+        "name": "",
+        "group": "ce617b4a.db5e68",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Humedad",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "20",
+        "seg2": "80",
+        "x": 650,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "bbe737be.dd4a38",
+        "type": "ui_gauge",
+        "z": "45a71fc.1bebde",
+        "name": "",
+        "group": "74f689f3.93cd48",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Presion",
+        "label": "pa",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1200",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "900",
+        "seg2": "1100",
+        "x": 650,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "63bbf25b.f79ecc",
+        "type": "ui_chart",
+        "z": "45a71fc.1bebde",
+        "name": "",
+        "group": "82b66628.be2f58",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Chart Temperatura",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 790,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bf6f4252.8bf9c",
+        "type": "ui_chart",
+        "z": "45a71fc.1bebde",
+        "name": "",
+        "group": "ce617b4a.db5e68",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Chart Humedad",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 820,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b8b0bcc9.10144",
+        "type": "ui_chart",
+        "z": "45a71fc.1bebde",
+        "name": "",
+        "group": "74f689f3.93cd48",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Chart Presión",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 800,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c689d5b4.4fd018",
+        "type": "rbe",
+        "z": "45a71fc.1bebde",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "property": "payload",
+        "x": 450,
+        "y": 540,
+        "wires": [
+            [
+                "ff02db8e.de4918"
+            ]
+        ]
+    },
+    {
+        "id": "41cafe7c.1f542",
+        "type": "ui_template",
+        "z": "45a71fc.1bebde",
+        "group": "4edafae7.7fb414",
+        "name": "",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "format": "Manda mensaje a M5Stack\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "x": 710,
+        "y": 320,
+        "wires": [
+            []
         ]
     }
 ]

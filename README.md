@@ -1,7 +1,7 @@
 Demo_Proyecto
 =============
 
-Proyecto Demo
+Proyecto Demo con M5Stack y M5StickC
 
 ### About
 
