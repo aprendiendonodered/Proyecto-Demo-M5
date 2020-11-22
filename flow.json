@@ -210,7 +210,7 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 510,
+        "x": 590,
         "y": 100,
         "wires": []
     },
