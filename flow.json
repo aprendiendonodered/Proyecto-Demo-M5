@@ -28,6 +28,130 @@
         "willPayload": ""
     },
     {
+        "id": "5f436a55.6632f4",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "4edafae7.7fb414",
+        "type": "ui_group",
+        "name": "Estado Botones M5Stack",
+        "tab": "5f436a55.6632f4",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "7db58b39.b19384",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "2b51ce0a.f32b32",
+        "type": "ui_group",
+        "name": "Manda mensaje",
+        "tab": "5f436a55.6632f4",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
         "id": "df326a5c.9a8758",
         "type": "mqtt in",
         "z": "45a71fc.1bebde",
@@ -52,12 +176,395 @@
         "active": true,
         "tosidebar": true,
         "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
         "statusType": "auto",
         "x": 510,
         "y": 100,
         "wires": []
+    },
+    {
+        "id": "79f397e3.41ff48",
+        "type": "mqtt in",
+        "z": "45a71fc.1bebde",
+        "name": "",
+        "topic": "aprendiendonodered/casa/m5stack/A",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "2ac34a26.7bd096",
+        "x": 190,
+        "y": 240,
+        "wires": [
+            [
+                "4d8740b5.cc4a7"
+            ]
+        ]
+    },
+    {
+        "id": "ff02db8e.de4918",
+        "type": "mqtt out",
+        "z": "45a71fc.1bebde",
+        "name": "",
+        "topic": "aprendiendonodered/casa/m5stack/label",
+        "qos": "",
+        "retain": "",
+        "broker": "2ac34a26.7bd096",
+        "x": 720,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "c6c6db42.44fb08",
+        "type": "comment",
+        "z": "45a71fc.1bebde",
+        "name": "Lógica de M5Stack",
+        "info": "",
+        "x": 180,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "34347db6.3c9062",
+        "type": "mqtt in",
+        "z": "45a71fc.1bebde",
+        "name": "",
+        "topic": "aprendiendonodered/casa/m5stack/B",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "2ac34a26.7bd096",
+        "x": 190,
+        "y": 300,
+        "wires": [
+            [
+                "9b9ff0e4.58e0f"
+            ]
+        ]
+    },
+    {
+        "id": "7d69045d.c637bc",
+        "type": "mqtt in",
+        "z": "45a71fc.1bebde",
+        "name": "",
+        "topic": "aprendiendonodered/casa/m5stack/C",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "2ac34a26.7bd096",
+        "x": 190,
+        "y": 360,
+        "wires": [
+            [
+                "8c1abddc.644d3"
+            ]
+        ]
+    },
+    {
+        "id": "2455ec69.7cdcc4",
+        "type": "ui_text",
+        "z": "45a71fc.1bebde",
+        "group": "4edafae7.7fb414",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "A",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 690,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "4d8740b5.cc4a7",
+        "type": "trigger",
+        "z": "45a71fc.1bebde",
+        "name": "",
+        "op1": "",
+        "op2": " ",
+        "op1type": "pay",
+        "op2type": "str",
+        "duration": "1",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 500,
+        "y": 360,
+        "wires": [
+            [
+                "2455ec69.7cdcc4"
+            ]
+        ]
+    },
+    {
+        "id": "d9f9160c.3fbfb8",
+        "type": "ui_text",
+        "z": "45a71fc.1bebde",
+        "group": "4edafae7.7fb414",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "C",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 690,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "8c1abddc.644d3",
+        "type": "trigger",
+        "z": "45a71fc.1bebde",
+        "name": "",
+        "op1": "",
+        "op2": " ",
+        "op1type": "pay",
+        "op2type": "str",
+        "duration": "1",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 500,
+        "y": 440,
+        "wires": [
+            [
+                "d9f9160c.3fbfb8"
+            ]
+        ]
+    },
+    {
+        "id": "667f7867.d37348",
+        "type": "ui_text",
+        "z": "45a71fc.1bebde",
+        "group": "4edafae7.7fb414",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "B",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 690,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "9b9ff0e4.58e0f",
+        "type": "trigger",
+        "z": "45a71fc.1bebde",
+        "name": "",
+        "op1": "",
+        "op2": " ",
+        "op1type": "pay",
+        "op2type": "str",
+        "duration": "1",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 500,
+        "y": 400,
+        "wires": [
+            [
+                "667f7867.d37348"
+            ]
+        ]
+    },
+    {
+        "id": "c2bde33c.dfadf",
+        "type": "inject",
+        "z": "45a71fc.1bebde",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 160,
+        "wires": [
+            [
+                "bd4cf071.e7dfc"
+            ]
+        ]
+    },
+    {
+        "id": "67252650.d05f28",
+        "type": "e-mail",
+        "z": "45a71fc.1bebde",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "secure": true,
+        "tls": true,
+        "name": "aprendiendoraspberrypi@gmail.com",
+        "dname": "manda email alerta",
+        "x": 410,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "609d11f3.929a",
+        "type": "comment",
+        "z": "45a71fc.1bebde",
+        "name": "En el inicio de Node-RED mando un email",
+        "info": "",
+        "x": 270,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "fc4c30da.caea3",
+        "type": "inject",
+        "z": "45a71fc.1bebde",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "Node-RED enriquecrespo.com:1880 deployed",
+        "payload": "La Instancia de Node-RED enriquecrespo.com:1880 ha hecho un redeploy o se ha reiniciado.",
+        "payloadType": "str",
+        "x": 210,
+        "y": 580,
+        "wires": [
+            [
+                "67252650.d05f28"
+            ]
+        ]
+    },
+    {
+        "id": "13ca4e2a.4f48f2",
+        "type": "inject",
+        "z": "45a71fc.1bebde",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 210,
+        "y": 640,
+        "wires": [
+            [
+                "30c6e645.d7462a",
+                "db05faa4.2d7928"
+            ]
+        ]
+    },
+    {
+        "id": "30c6e645.d7462a",
+        "type": "change",
+        "z": "45a71fc.1bebde",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(file)::prueba",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 410,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "db05faa4.2d7928",
+        "type": "change",
+        "z": "45a71fc.1bebde",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "prueba",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 410,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6e6a5aba.9367b4",
+        "type": "ui_text_input",
+        "z": "45a71fc.1bebde",
+        "name": "",
+        "label": "",
+        "tooltip": "",
+        "group": "2b51ce0a.f32b32",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "",
+        "x": 470,
+        "y": 180,
+        "wires": [
+            [
+                "ff02db8e.de4918"
+            ]
+        ]
     }
 ]
